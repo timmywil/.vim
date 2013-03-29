@@ -72,6 +72,9 @@ set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Pathogen (Install git repos in the ~/.vim/bundle path)
+execute pathogen#infect()
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
