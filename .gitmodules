@@ -13,3 +13,9 @@
 [submodule "jshint.vim"]
 	path = bundle/jshint.vim
 	url = git://github.com/walm/jshint.vim.git
+[submodule "vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = git://github.com/mattn/zencoding-vim.git
