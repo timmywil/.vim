@@ -7,3 +7,6 @@
 [submodule "jshint.vim"]
 	path = bundle/jshint.vim
 	url = git://github.com/wookiehangover/jshint.vim.git
+[submodule "vim-jade"]
+	path = bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
