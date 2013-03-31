@@ -46,6 +46,8 @@ syntax on
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+" Number of space characters for indenting
+set shiftwidth=2
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,nbsp:_
 set list
@@ -55,8 +57,6 @@ set hlsearch
 set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
-" Auto indent
-set autoindent
 " Always show status line
 set laststatus=2
 " Enable mouse in all modes
