@@ -1,5 +1,9 @@
 " Set color scheme
 colorscheme desert
+" Set default font
+if has('gui_running')
+	set guifont=Monaco:h14
+endif
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
