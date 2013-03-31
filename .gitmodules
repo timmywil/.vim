@@ -10,3 +10,6 @@
 [submodule "nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "jshint.vim"]
+	path = bundle/jshint.vim
+	url = git://github.com/walm/jshint.vim.git
