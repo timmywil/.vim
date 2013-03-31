@@ -71,6 +71,14 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+"Disable bell and window flash
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
+" Project plugin settings
+let g:proj_window_width=30
 
 " Pathogen (Install git repos in the ~/.vim/bundle path)
 execute pathogen#infect()
@@ -94,3 +102,19 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
+" Custom key bindings
+
+" Map ALT-m to beginning of line at non-whitespace
+set macmeta
+map <M-m> ^
+
+" Insert mode keys
+
+" map CTRL-e to end-of-line
+imap <C-e> <esc>$i<right>
+" map CTRL-a to beginning-of-line
+imap <C-a> <esc>0i
+
+" map CTRL-d to delete
+imap <C-d> <delete>
