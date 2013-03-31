@@ -118,3 +118,6 @@ imap <C-a> <esc>0i
 
 " map CTRL-d to delete
 imap <C-d> <delete>
+
+" Indent next line
+imap <C-j> <CR><Tab>
