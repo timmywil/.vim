@@ -86,9 +86,6 @@ endif
 " Project plugin settings
 let g:proj_window_width=30
 
-" Pathogen (Install git repos in the ~/.vim/bundle path)
-execute pathogen#infect()
-
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -124,3 +121,7 @@ imap <C-a> <esc>0i
 
 " map CTRL-d to delete
 imap <C-d> <delete>
+
+" Pathogen (Install git repos in the ~/.vim/bundle path)
+execute pathogen#infect()
+filetype plugin indent on
