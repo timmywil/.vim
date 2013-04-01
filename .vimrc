@@ -118,6 +118,12 @@ map <M-m> ^
 imap <C-e> <esc>$i<right>
 " map CTRL-a to beginning-of-line
 imap <C-a> <esc>0i
+" map CTRL-f to next-character
+imap <C-f> <esc>la
+" map CTRL-b to previous-character
+imap <C-b> <esc>ha
+" map ALT-m to beginning of line at non-whitespace
+imap <M-m> <esc>^i
 
 " map CTRL-d to delete
 imap <C-d> <delete>
