@@ -46,6 +46,7 @@ syntax on
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+set softtabstop=2
 " Number of space characters for indenting
 set shiftwidth=2
 " Show “invisible” characters
@@ -105,6 +106,11 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
+" Spacing/tabs per filetype
+autocmd Filetype html setlocal et
+autocmd Filetype css setlocal et
+autocmd Filetype less setlocal et
 
 " Custom key bindings
 
