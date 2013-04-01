@@ -124,6 +124,9 @@ imap <C-f> <esc>la
 imap <C-b> <esc>ha
 " map ALT-m to beginning of line at non-whitespace
 imap <M-m> <esc>^i
+" map ALT-f & ALT-b to next/previous-word
+imap <M-f> <esc>lwi
+imap <M-b> <esc>bi
 
 " map CTRL-d to delete
 imap <C-d> <delete>
