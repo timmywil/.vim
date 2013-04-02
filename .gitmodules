@@ -37,3 +37,6 @@
 [submodule "snipmate-snippets"]
 	path = bundle/snipmate-snippets
 	url = git@github.com:timmywil/snipmate-snippets.git
+[submodule "vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
