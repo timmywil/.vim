@@ -1,7 +1,7 @@
 " Set color scheme
 colorscheme desert
 " Set default font
-if has('gui_running')
+if has("gui_running")
 	set guifont=Monaco:h14
 endif
 " Make Vim more useful
@@ -56,6 +56,7 @@ set nowrap
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,nbsp:_
 set list
+
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -82,6 +83,8 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+" Look for tags in current directory, then move on up
+set tags=./tags;/
 "Disable bell and window flash
 set noerrorbells visualbell t_vb=
 if has("autocmd")
@@ -116,6 +119,7 @@ if has("autocmd")
 	autocmd Filetype css setlocal et
 	autocmd Filetype less setlocal et
 	autocmd Filetype javascript setlocal si ai
+	autocmd Filetype markdown setlocal et
 endif
 
 " Snippet settings
@@ -126,9 +130,26 @@ let g:snipMate.scope_aliases["jade"] = "html"
 
 " Custom key bindings
 
+" Sessions
+map <C-q> <ESC>:mksession! ~/.vim/session<CR>:wqa<CR>
+function! RestoreSession()
+  if argc() == 0 "vim called without arguments
+    execute "source ~/.vim/session"
+  end
+endfunction
+if has("autocmd")
+	autocmd VimEnter * call RestoreSession()
+endif
+
 " Map ALT-m to beginning of line at non-whitespace
-set macmeta
+if has("gui_running")
+	set macmeta
+endif
 map <M-m> ^
+
+" Tags keys
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Insert mode keys
 
@@ -136,6 +157,10 @@ map <M-m> ^
 imap <C-e> <esc>$i<right>
 " map CTRL-a to beginning-of-line
 imap <C-a> <esc>0i
+" map ALT-j to next line
+imap <M-j> <esc>ja
+" map ALT-k to previous line
+imap <M-k> <esc>ka
 " map CTRL-f to next-character
 imap <C-f> <esc>la
 " map CTRL-b to previous-character
@@ -145,9 +170,13 @@ imap <M-m> <esc>^i
 " map ALT-f & ALT-b to next/previous-word
 imap <M-f> <esc>lwi
 imap <M-b> <esc>bi
+" map CTRL-k to cut the rest of the line
+imap <C-k> <esc>ld$a
 
 " map CTRL-d to delete
 imap <C-d> <delete>
+" ALT-d to delete word
+imap <M-d> <esc>ldwa
 
 " Pathogen (Install git repos in the ~/.vim/bundle path)
 execute pathogen#infect()
