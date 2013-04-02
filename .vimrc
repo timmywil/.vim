@@ -6,6 +6,8 @@ if has('gui_running')
 endif
 " Make Vim more useful
 set nocompatible
+" Allow leaving modified buffers
+set hidden
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
@@ -49,6 +51,8 @@ set tabstop=2
 set softtabstop=2
 " Number of space characters for indenting
 set shiftwidth=2
+" Turn wrap words off
+set nowrap
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,nbsp:_
 set list
@@ -80,7 +84,7 @@ set showcmd
 set scrolloff=3
 "Disable bell and window flash
 set noerrorbells visualbell t_vb=
-if has('autocmd')
+if has("autocmd")
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
@@ -105,12 +109,20 @@ if has("autocmd")
 	filetype on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+
+	" Spacing/tabs per filetype
+	autocmd Filetype html setlocal et
+	autocmd Filetype jade setlocal et
+	autocmd Filetype css setlocal et
+	autocmd Filetype less setlocal et
+	autocmd Filetype javascript setlocal si ai
 endif
 
-" Spacing/tabs per filetype
-autocmd Filetype html setlocal et
-autocmd Filetype css setlocal et
-autocmd Filetype less setlocal et
+" Snippet settings
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases["less"] = "css"
+let g:snipMate.scope_aliases["jade"] = "html"
 
 " Custom key bindings
 
