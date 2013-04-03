@@ -127,6 +127,7 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases["less"] = "css"
 let g:snipMate.scope_aliases["jade"] = "html"
+let g:snipMate.scope_aliases["javascript"] = "javascript,javascript-jquery"
 
 " Custom key bindings
 
@@ -150,6 +151,9 @@ map <M-m> ^
 " Tags keys
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Map CTRL-/ to clear searches
+nmap <M-/> :let @/=""<CR>
 
 " Insert mode keys
 
