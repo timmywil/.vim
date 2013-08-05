@@ -184,4 +184,3 @@ imap <M-d> <esc>ldwa
 
 " Pathogen (Install git repos in the ~/.vim/bundle path)
 execute pathogen#infect()
-filetype plugin indent on
